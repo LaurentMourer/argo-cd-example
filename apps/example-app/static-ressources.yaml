@@ -1,9 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: john-doe
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  name: example-static-resources
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
 spec:
   destination:
     namespace: anothernamespace
