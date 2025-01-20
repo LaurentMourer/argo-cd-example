@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dsi
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: wiser-dsi
+    server: 'https://38D8AF2ACE8672EAB4D03B675C809365.gr7.eu-west-1.eks.amazonaws.com'
+  source:
+    path: infra/k8s/test/static-ressources
+    repoURL: https://github.com/WiserSolutions/dsi-api-service.git
+    targetRevision: main
+  project: wiser-dsi
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PruneLast=true
+      - CreateNamespace=true
