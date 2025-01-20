@@ -9,7 +9,7 @@ spec:
     namespace: anothernamespace
     server: 'https://kubernetes.default.svc'
   source:
-    path: infra/k8s/test/static-ressources
+    path: apps.static-ressources
     repoURL: https://github.com/LaurentMourer/argo-cd-example.git
     targetRevision: main
   project: default
