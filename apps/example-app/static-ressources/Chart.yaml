@@ -1,0 +1,4 @@
+apiVersion: v1
+description: static resources for example application
+name: example-application-static-resources
+version: 0.1.0
