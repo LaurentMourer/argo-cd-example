@@ -6,7 +6,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: anothernamespace
     server: 'https://kubernetes.default.svc'
   source:
     path: infra/k8s/test/static-ressources
